@@ -42,12 +42,12 @@ def scrapetable(root):
                 boldtags1 = pdfxml.xpath('.//text[contains(@top, "393")]//b')
 #Then store the second [1] result's text in 'Date2'
                 record ["Date2"] = boldtags1[1].text
-                boldtags = pdfxml.xpath('.//text[contains(@top, "386")]//b')
+                boldtags = pdfxml.xpath('.//text[contains(@top, "560")]//b')
                 print "THIS IS THE LIST ", boldtags
 #This is the code that the line above is looking for
 #<text top="386" left="464" width="75" height="21" font="0"><b>04/09/2012</b></text>
 #Then store the second [1] result's text in 'Review Date'
-                record ["Review Date"] = boldtags[1].text
+                record ["Review Date"] = boldtags[0].text
                 print record
 #Now we grab all the <text ...> tags
                 texttags = pdfxml.xpath('.//text')
