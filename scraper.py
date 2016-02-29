@@ -3,10 +3,9 @@ import scraperwiki
 import urllib2
 import lxml.etree
 import lxml.html
-#<table summary="Corporate level publications: What our priorities are and how we are doing:
-Knife Crime Summaries" class="foidocuments">
-#This creates a new function to find the part of the page we want, scrape bits, and follow
-links in it.
+
+#<table summary="Corporate level publications: What our priorities are and how we are doing: Knife Crime Summaries" class="foidocuments">
+#This creates a new function to find the part of the page we want, scrape bits, and follow links in it.
 def scrapetable(root):
   #create an empty variable 'record', which is a dictionary
   record = {}
