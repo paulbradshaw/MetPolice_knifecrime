@@ -24,14 +24,12 @@ def scrapetable(root):
     if report:
       #get the value of the first (index 0) 'href=' attribute and put in 'pdfurl' variable
       pdfurl = report[0].attrib.get('href')
-      #store the value of the first 'href=' and 'title=' attributes with
-      the labels 'URL' and 'Date' in the variable 'record'
+      #store the value of the first 'href=' and 'title=' attributes with the labels 'URL' and 'Date' in the variable 'record'
       record["Date"] = report[0].attrib.get('title')
       record["URL"] = report[0].attrib.get('href')
       # if the 'pdfurl' variable was indeed created...
       if pdfurl:
-        #Start running a PDF scraper on that, firstly 'opening' the PDF URL with the urllib2
-        library's urlopen function, and 'reading' the PDF into a variable called 'pdfdata'...
+        #Start running a PDF scraper on that, firstly 'opening' the PDF URL with the urllib2 library's urlopen function, and 'reading' the PDF into a variable called 'pdfdata'...
         pdfdata = urllib2.urlopen (baseurl+pdfurl).read()
         #...Then using pdftoxml to convert that into a variable called 'xmldata'
         xmldata = scraperwiki.pdftoxml(pdfdata)
