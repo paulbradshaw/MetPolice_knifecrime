@@ -99,7 +99,7 @@ def scrapetable(root):
 def scrape_and_look_for_next_link(url):
     #scrapes the page and puts it in 'html'
     html = scraperwiki.scrape(url)
-    print html
+    #print html
     #turns html from a string into an lxml object called 'root'
     root = lxml.html.fromstring(html)
     #runs another function - created earlier - on 'root'
