@@ -52,8 +52,7 @@ def scrapetable(root):
           left = text.attrib.get('left')
           leftinteger = int(left)
           #If leftinteger is between 96 and 99...
-          #see other options at http://stackoverflow.com/questions/ 618093/how-to-find-whether-anumber-
-          belongs-to-a-particular-range-in-python
+          #see other options at http://stackoverflow.com/questions/ 618093/how-to-find-whether-anumber-belongs-to-a-particular-range-in-python
           #Literally: If 96 is smaller than leftinteger, AND leftinteger is smaller than 99:
           if 96 < leftinteger < 99:
             #Record the text of 'text' (sorry)
