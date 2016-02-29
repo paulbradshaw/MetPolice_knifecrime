@@ -36,10 +36,12 @@ def scrapetable(root):
 #...Then using .fromstring to convert that into a variable called 'pdfxml'
                 pdfxml = lxml.etree.fromstring(xmldata)
                 print xmldata
-#Use .xpath again to find <text ... top="191"> tags, and <b> tags within those
-                boldtags1 = pdfxml.xpath('.//text[contains(@top, "492")]//b')
-#Then store the first [0] result's text in 'Date2'
-                record ["Date2"] = boldtags1[0].text
+#Use .xpath again to find <text ... top="393"> tags, and <b> tags within those
+#This had changed since the original Scraperwiki scraper
+#<text top="393" left="463" width="75" height="14" font="0"><b>05/10/2015</b></text>
+                boldtags1 = pdfxml.xpath('.//text[contains(@top, "393")]//b')
+#Then store the second [1] result's text in 'Date2'
+                record ["Date2"] = boldtags1[1].text
                 boldtags = pdfxml.xpath('.//text[contains(@top, "386")]//b')
 #This is the code that the line above is looking for
 #<text top="386" left="464" width="75" height="21" font="0"><b>04/09/2012</b></text>
