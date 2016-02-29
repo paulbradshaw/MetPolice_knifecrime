@@ -41,9 +41,9 @@ def scrapetable(root):
 #<text top="393" left="463" width="75" height="14" font="0"><b>05/10/2015</b></text>
                 boldtags1 = pdfxml.xpath('.//text[contains(@top, "393")]//b')
 #Then store the second [1] result's text in 'Date2'
-                print "THIS IS THE LIST ", boldtags1
                 record ["Date2"] = boldtags1[1].text
                 boldtags = pdfxml.xpath('.//text[contains(@top, "386")]//b')
+                print "THIS IS THE LIST ", boldtags
 #This is the code that the line above is looking for
 #<text top="386" left="464" width="75" height="21" font="0"><b>04/09/2012</b></text>
 #Then store the second [1] result's text in 'Review Date'
