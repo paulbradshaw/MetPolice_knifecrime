@@ -17,7 +17,7 @@ def scrapetable(root):
     #That will be a list, so we start a for loop to go through each item, calling it 'row'
     for row in rows:
         #show us the text content of that object
-        print row.encode("utf-8").text_content()
+        print row.text_content().encode("utf-8")
         #now grab the contents of all <td><a tags within that 'row' object, and put it in the variable 'report'
         report = row.cssselect("td a")
         #if that exists...
