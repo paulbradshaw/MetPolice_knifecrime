@@ -47,8 +47,8 @@ def scrapetable(root):
 #This is the code that the line above is looking for
 #<text top="386" left="464" width="75" height="21" font="0"><b>04/09/2012</b></text>
 #Then store the second [1] result's text in 'Review Date'
-                record ["Review Date"] = boldtags[0].text
-                print record
+            #    record ["Review Date"] = boldtags[0].text
+            #    print record
 #Now we grab all the <text ...> tags
                 texttags = pdfxml.xpath('.//text')
                 for text in texttags:
