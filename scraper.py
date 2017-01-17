@@ -12,7 +12,8 @@ def scrapetable(root):
     #create an empty variable 'record', which is a dictionary
     record = {}
     uniqueid = 0
-    #Grab any bits of 'root' that have the tag <table> containing summary=" and 'Knife' somewhere in that, then the contents of <tr>. Put the results in variable called 'rows'
+    #Grab any bits of 'root' that have the tag <table> containing summary=" and 'Knife' somewhere in that, then the contents of <tr>. 
+    #Put the results in a variable called 'rows'
     rows = root.xpath(".//table[contains(@summary, 'Knife')]//tr")
     #That will be a list, so we start a for loop to go through each item, calling it 'row'
     for row in rows:
@@ -100,14 +101,16 @@ def scrapetable(root):
 def scrape_and_look_for_next_link(url):
     #scrapes the page and puts it in 'html'
     html = scraperwiki.scrape(url)
-    #print html
+    
     #turns html from a string into an lxml object called 'root'
     root = lxml.html.fromstring(html)
+    
     #runs another function - created earlier - on 'root'
     scrapetable(root)
 
 #This will be used for relative links in later pages
 baseurl = "http://www.met.police.uk/foi/"
+
 #When added to the baseurl, this is our starting page 
 startingurl = "c_priorities_and_how_we_are_doing.htm"
 
